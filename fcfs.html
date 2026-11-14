@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style src="fcfs.css"></style>
+    <title>FCFS</title>
+</head>
+
+<body>
+    <h1>FCFS Calculator</h1>
+	<p>Inputs separated by spaces</p>
+	<label for="AT">Enter Arrival Time:</label>
+	<input id="AT"></input> <br>
+	<label for"BT">Enter Burst Time:</label>
+	<input id="BT"></input> <br>
+	<button id="calculateBtn">Calculate</button>
+	<div class="ExecOrder" id="ExecOrder">
+	<h2>Execution Order:</h2>
+	<p id="eoOutput"></p>
+	</div>
+	<div class="GanttChart" id="GanttChart">
+	<h2>Gantt Chart:</h2>
+	<p><span id="gcProcesses"></span><br><span id="gcTimes"></span></p>
+	</div>
+	<div class="AnsTable" id="AnsTable">
+		<table border="1" id="fcfsTable">
+			<tr width="300" height="30"> <th>Process</th> <th>AT</th> <th>BT</th> <th>CT</th> <th>TAT</th> <th>WT</th> </tr>
+		</table>
+	</div>
+	<script src="fcfs.js"></script>
+</body>
+</html>
