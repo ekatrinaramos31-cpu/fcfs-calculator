@@ -4,31 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style src="fcfs.css"></style>
+    <link rel="stylesheet" href="fcfs.css">
     <title>FCFS</title>
 </head>
 
 <body>
-    <h1>FCFS Calculator</h1>
-	<p>Inputs separated by spaces</p>
-	<label for="AT">Enter Arrival Time:</label>
-	<input id="AT"></input> <br>
-	<label for"BT">Enter Burst Time:</label>
-	<input id="BT"></input> <br>
-	<button id="calculateBtn">Calculate</button>
-	<div class="ExecOrder" id="ExecOrder">
-	<h2>Execution Order:</h2>
-	<p id="eoOutput"></p>
-	</div>
-	<div class="GanttChart" id="GanttChart">
-	<h2>Gantt Chart:</h2>
-	<p><span id="gcProcesses"></span><br><span id="gcTimes"></span></p>
-	</div>
-	<div class="AnsTable" id="AnsTable">
-		<table border="1" id="fcfsTable">
-			<tr width="300" height="30"> <th>Process</th> <th>AT</th> <th>BT</th> <th>CT</th> <th>TAT</th> <th>WT</th> </tr>
-		</table>
-	</div>
-	<script src="fcfs.js"></script>
+    <canvas id="matrix"></canvas>
+    <div class="wrap">
+        <h1>FCFS Calculator</h1>
+        <div class="inputs">
+            <div class="field">
+                <label for="AT">ENTER ARRIVAL TIME</label>
+                <input id="AT" type="text" aria-label="Arrival Time">
+            </div>
+            <div class="field">
+                <label for="BT">ENTER BURST TIME</label>
+                <input id="BT" type="text" aria-label="Burst Time">
+            </div>
+        </div>
+        <button id="calculateBtn">Calculate</button>
+
+        <div class="AnsTable" id="AnsTable">
+            <table id="fcfsTable">
+                <tr>
+                    <th>Process</th>
+                    <th>AT</th>
+                    <th>BT</th>
+                    <th>CT</th>
+                    <th>TAT</th>
+                    <th>WT</th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="ExecOrder" id="ExecOrder">
+            <h2>execution order</h2>
+            <p id="eoOutput"></p>
+        </div>
+
+        <div class="GanttChart" id="GanttChart">
+            <h2>Gantt chart</h2>
+            <div id="gcProcesses"></div>
+            <div id="gcTimes"></div>
+        </div>
+
+        <div class="avg">Avg TAT: 0.00 &nbsp;&nbsp; Avg WT: 0.00</div>
+    </div>
+
+    <script src="fcfs.js"></script>
 </body>
 </html>
